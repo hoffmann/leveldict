@@ -1,0 +1,8 @@
+=========
+leveldict
+=========
+
+Leveldict provides a dict-based wrapper around the Python LevelDB Api.
+
+
+See: http://peter-hoffmann.com/2011/adding-dict-interface-python-leveldb-api.html
