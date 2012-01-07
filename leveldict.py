@@ -3,7 +3,7 @@ import leveldb
 import json
 
 
-class LevelDict(DictMixin):
+class LevelDict(object, DictMixin):
     """Dict Wrapper around the Google LevelDB Database"""
     def __init__(self, path):
         """Constructor for LevelDict"""
@@ -20,8 +20,8 @@ class LevelDict(DictMixin):
         self.db.Delete(key)
 
     def __iter__(self):
-        for k, v in self.db.RangeIter():
-            yield v
+        for k, v in self.db.RangeIter(include_value=False):
+            yield k 
 
     def keys(self):
         return [k for k, v in self.db.RangeIter()]
