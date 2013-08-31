@@ -20,7 +20,7 @@ class LevelDict(object, DictMixin):
         self.db.Delete(key)
 
     def __iter__(self):
-        for k, v in self.db.RangeIter(include_value=False):
+        for k in self.db.RangeIter(include_value=False):
             yield k 
 
     def keys(self):
